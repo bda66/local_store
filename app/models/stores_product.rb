@@ -1,4 +1,4 @@
-class StoresProducts < ActiveRecord::Base
+class StoresProduct < ActiveRecord::Base
   belongs_to :store
   belongs_to :product
 end
