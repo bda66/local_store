@@ -47,10 +47,10 @@
         </button>
         <a class="navbar-brand" href="#">Магазин</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-          </ul>
+          <div class="nav navbar-nav">
+            Выбрать магазин: <%= select_tag 'shops', options_for_select(@stores, @store.id),
+                                            class: 'navbar-select' %>
+          </div>
         </div>
       </div>
     </div>
@@ -61,24 +61,14 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Магазин 2018</p>
+        <%= render partial: 'store/info' %>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted"><p>&copy; Магазин 2018</p></span>
+        </div>
       </footer>
-
-    </div> <!-- /container -->
+    </div>
 
   </body>
 </html>

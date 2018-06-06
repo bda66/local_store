@@ -1,5 +1,7 @@
-<h1>Название магазина</h1>
+<h1><%= @store.name %></h1>
 
 <div class="row buffer-bottom">
- <%= render partial: 'products/product' %>
+  <% @store.stores_products.each do |stores_product| %>
+    <%= render partial: 'products/product', locals: { stores_product: stores_product } %>
+  <% end %>
 </div>
