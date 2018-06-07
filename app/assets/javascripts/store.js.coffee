@@ -7,5 +7,5 @@ setStore = ->
       url:  '/'
       data: { selected_store: { store_id: store_id} }
 
-$(document).on 'ready ajaxSuccess', ->
+$(document).on 'ready', ->
   setStore()

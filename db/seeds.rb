@@ -7,9 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Store.create(name: 'м. Автозаводская', country: 'Россия', city: 'Москва', address: 'ул. Ленинская Слобода, 26', phone_number: '+7 (495) 803-42-36', postal_code: 115280, working_hours: 'Ежедневно: 10:00—22:00')
+sleep 5
 Store.create(name: 'м. Библиотека им. Ленина', country: 'Россия', city: 'Москва', address: 'ул. Воздвиженка, 4/7, стр. 1', phone_number: '+7 (499) 270-00-52', postal_code: 125009, working_hours: 'Круглосуточно')
+sleep 5
 Store.create(name: 'м. Войковская', country: 'Россия', city: 'Москва', address: 'Ленинградское ш., 16А, корп. 2', phone_number: '+7 (495) 287-00-47', postal_code: 125171, working_hours: 'Ежедневно: 10:00—22:00')
+sleep 5
 Store.create(name: 'м. Дмитровская', country: 'Россия', city: 'Москва', address: 'ул. Большая Новодмитровская, 36', phone_number: '+7 (495) 642-71-80', postal_code: 127015, working_hours: 'Ежедневно: 10:00—22:00')
+sleep 5
 
 Category.create(name: 'Книги')
 Category.create(name: 'Канцелярия')
