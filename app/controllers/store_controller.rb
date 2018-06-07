@@ -1,4 +1,6 @@
 class StoreController < ApplicationController
+  DISTANCE = 300.freeze
+
   before_action :set_store, only: :index
 
   def index
@@ -13,10 +15,12 @@ class StoreController < ApplicationController
   private
 
   def set_store
-    if params[:selected_store]
+    if params[:position]
+      @store = Store.near([params[:position][:latitude], params[:position][:longitude]], DISTANCE).first
+    elsif params[:selected_store]
       @store = Store.find(params[:selected_store][:store_id])
     else
-      @store =  Store.first
+      @store = Store.first
     end
   end
 end
