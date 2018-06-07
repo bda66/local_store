@@ -7,6 +7,7 @@ class CreateStores < ActiveRecord::Migration
       t.string  :address
       t.string  :phone_number
       t.integer :postal_code
+      t.string  :working_hours
       t.float   :latitude,  index: true
       t.float   :longitude, index: true
 

@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 20180605135025) do
     t.string   "address"
     t.string   "phone_number"
     t.integer  "postal_code"
+    t.string   "working_hours"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "stores", ["latitude"], name: "index_stores_on_latitude"

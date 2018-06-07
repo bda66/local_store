@@ -2,11 +2,12 @@
   <div class="well sidebar-nav">
     <h3>Информация:</h3>
     <ul class="nav nav-list">
-      <li><%= "Страна: #{@store.country}"  %></li>
-      <li><%= "Город: #{@store.city}"  %></li>
-      <li><%= "Адрес: #{@store.address}"  %></li>
-      <li><%= "Телефон: #{@store.phone_number}"  %></li>
-      <li><%= "Часы работы: "  %></li>
+      <li><%= "Страна: #{@store.country}" %></li>
+      <li><%= "Город: #{@store.city}" %></li>
+      <li><%= "Адрес: #{@store.address}" %></li>
+      <li><%= "Индекс: #{@store.postal_code}" %></li>
+      <li><%= "Телефон: #{@store.phone_number}" %></li>
+      <li><%= "Часы работы: #{@store.working_hours}" %></li>
     </ul>
   </div>
 </div>
