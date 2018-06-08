@@ -50,6 +50,9 @@
           <div class="nav navbar-nav">
             Выбрать магазин: <%= select_tag 'shops', options_for_select(@stores, @store.id),
                                             class: 'navbar-select' %>
+            <button type="button" class="btn btn-default find-store" aria-label="Left Align">
+              <span>Найти ближайший</span>
+            </button>
           </div>
         </div>
       </div>

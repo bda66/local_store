@@ -13,6 +13,13 @@ getCookie = (name) ->
   if parts.length == 2
     parts.pop().split(';').shift()
 
+setCookie = (cname, cvalue, exMins) ->
+  d = new Date
+  d.setTime d.getTime() + exMins * 60 * 1000
+  expires = 'expires=' + d.toUTCString()
+  document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+
+
 getUserLocation = ->
   return if getCookie('selected_store_id')
   if navigator.geolocation
@@ -22,6 +29,12 @@ getUserLocation = ->
         url:  '/'
         data: { position: position.coords }
 
+findStore = ->
+  $('.find-store').on 'click', ->
+    setCookie 'selected_store_id', '', 0
+    getUserLocation()
+
 $(document).on 'ready', ->
   getUserLocation()
   setStore()
+  findStore()
