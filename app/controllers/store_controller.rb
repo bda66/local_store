@@ -19,6 +19,8 @@ class StoreController < ApplicationController
       @store = Store.near([params[:position][:latitude], params[:position][:longitude]], DISTANCE).first
     elsif params[:selected_store]
       @store = Store.find(params[:selected_store][:store_id])
+    elsif cookies[:selected_store_id]
+      @store = Store.find(cookies[:selected_store_id])
     else
       @store = Store.first
     end
