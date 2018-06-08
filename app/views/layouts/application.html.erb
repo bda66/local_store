@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Магазин" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : 'LocalStore' %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -45,14 +45,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Магазин</a>
+        <a class="navbar-brand" href="/">LocalStore</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <div class="nav navbar-nav">
-            Выбрать магазин: <%= select_tag 'shops', options_for_select(@stores, @store.id),
-                                            class: 'navbar-select' %>
-            <button type="button" class="btn btn-default find-store" aria-label="Left Align">
-              <span>Найти ближайший</span>
-            </button>
+            <form class="navbar-form pull-left">
+              Выбрать магазин:
+              <%= select_tag 'shops', options_for_select(@stores, @store.id), class: 'navbar-select form-control' %>
+              <button type="button" class="btn btn-default find-store" aria-label="Left Align">
+                <span>Найти ближайший</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -70,7 +72,7 @@
       </div>
       <footer class="footer">
         <div class="container">
-          <span class="text-muted"><p>&copy; Магазин 2018</p></span>
+          <span class="text-muted"><p>&copy; LocalStore 2018</p></span>
         </div>
       </footer>
     </div>

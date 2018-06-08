@@ -31,8 +31,9 @@ getUserLocation = ->
 
 findStore = ->
   $('.find-store').on 'click', ->
-    setCookie 'selected_store_id', '', 0
-    getUserLocation()
+    if navigator.geolocation
+      setCookie 'selected_store_id', '', 0
+      getUserLocation()
 
 $(document).on 'ready', ->
   getUserLocation()
